@@ -1,0 +1,9 @@
+{
+  "keyMain": {
+    "host": "39.100.95.164",
+    "user": "root",
+    "pass": "sfx-server1",
+    "port": 22,
+    "remotePath": "/usr/local/www/official-website-serve/www"
+  }
+}
