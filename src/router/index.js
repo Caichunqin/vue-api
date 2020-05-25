@@ -3,6 +3,7 @@ import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 
 Vue.use(VueRouter)
+// const lazyload = component => () => import(`./views/${component}.vue`)
 
 const routes = [
   {
@@ -18,6 +19,14 @@ const routes = [
     // which is lazy-loaded when the route is visited.
     component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
   }
+
+  // {
+  //   path: '/404',
+  //   component: lazyload('404'),
+  //   meta: {
+  //     requireAuth: true
+  //   }
+  // }
 ]
 
 const router = new VueRouter({
@@ -25,5 +34,16 @@ const router = new VueRouter({
   base: process.env.BASE_URL,
   routes
 })
+
+// router.beforeEach((to, from, next) => {
+//   if (
+//     to.matched.some(record => record.meta.requireAuth) &&
+//     !localStorage.getItem('token')
+//   ) {
+//     toLogin()
+//     return
+//   }
+//   next()
+// })
 
 export default router
